@@ -1,34 +1,29 @@
 #include <stdio.h>
-#include <math.h>
 
 int main() {
-    float x[1000];
-    int i,n;
-    float average,sum=0,std_deviation,sum1=0 , variance;
-    printf("Enter number of elements \n");
+    int n,f,flag=0;
+    printf("Enter size of array: ");
     scanf("%d", &n);
-    for (i = 0; i<n ; i++){
-        printf("Enter %d element \n", i+1);
-        scanf("%f", &x[i]);
+
+    int arr[n];
+    printf("Enter elements of array: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
     }
 
-    for (i = 0; i<n ; i++){
-        sum = sum + x[i];
-}
+    printf("Enter element to find: ");
+    scanf("%d", &f);
 
-    average = sum/(float)n;
+    for(int i = 0; i < n; i++) {
+        if(arr[i] == f) {
+            printf("Element found at index %d\n", i);
+            flag = 1;
+            return 0;
+        }
+    }
 
-   printf("Average of all elements = %.2f\n",  average);
-
-   for (i = 0; i<n ; i++){
-        sum1 = sum1 + pow((x[i] - average),2);
-   }
-
-   variance = sum1/(float)n;
-   std_deviation = sqrt(variance);
-
-    printf("Standard Deviation = %.2f\n", std_deviation);
-    printf("Variance = %.2f\n", variance);
-    return 0;
+    if(flag == 0) {
+        printf("Element not found\n");
+    }
 
 }
