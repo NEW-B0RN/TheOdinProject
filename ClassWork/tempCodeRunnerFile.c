@@ -1,29 +1,19 @@
 #include <stdio.h>
 
 int main() {
-    int n,f,flag=0;
-    printf("Enter size of array: ");
-    scanf("%d", &n);
+    int i = 10, *j, **k;
+    j = &i;
+    k = &j;
 
-    int arr[n];
-    printf("Enter elements of array: ");
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
+    printf("\naddr of i=%u",&i);
+printf("\naddr of i=%u",j);
+printf("\naddr of i=%u",*k);
+printf("\naddr of j=%u",&j);
+printf("\naddr of j=%u",k);
+printf("\naddr of k=%u",&k);
+printf("\nj=%u",j); printf("\nk=%u",k);
+printf("\ni=%d",i); printf("\ni=%d",*(&i));
+printf("\ni=%d",*j); printf("\ni=%d",**k);     
 
-    printf("Enter element to find: ");
-    scanf("%d", &f);
-
-    for(int i = 0; i < n; i++) {
-        if(arr[i] == f) {
-            printf("Element found at index %d\n", i);
-            flag = 1;
-            return 0;
-        }
-    }
-
-    if(flag == 0) {
-        printf("Element not found\n");
-    }
 
 }
