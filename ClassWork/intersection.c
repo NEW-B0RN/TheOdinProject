@@ -1,36 +1,21 @@
 #include <stdio.h>
 
 int main() {
-    int n, m;
-    bool flag = false;
+  int ar1[] = {1, 2, 3, 4, 4, 4, 8, 8, 9}, ar2[] = {2, 4, 6, 8, 10, 12, 14, 16, 18},temp;
 
-    printf("Enter the number of elements in the first array: \n");
-    scanf("%d", &n);
-    int arr1[n];
-
-    for (int i = 0; i < n; i++) {
-        scanf("Element no.%d\n", &arr1[i]);
+  for (int i = 0; i < 9; i++) {
+    for (int j = 0; j < 9; j++) {
+      if (ar1[i] == ar1[j]) {
+          for (int k = j - 1; i < 9 - 1; i++)
+    {
+        ar1[j] = ar1[j + 1];
     }
-
-    printf("Enter the elements of the second array: \n");
-    scanf("%d", &m);
-
-    int arr2[m];
-
-    for (int i = 0; i < m; i++) {
-        scanf("Element no.%d\n", &arr2[i]);
+        
+      }
     }
+  }
 
-    for (int i = 0; i < n; i++){
-        for (int j = 0; j < m; j++){
-            if (arr1[i] == arr2[j]){
-                flag = true;
-;
-            }
-
-            if(flag == true){
-                printf("The common element is %d\n", arr1[i]);
-            }
-        }
-    }
+  for (int i = 0; i < 9; i++) {
+    printf("%d ", ar1[i]);
+  }
 }

@@ -1,29 +1,20 @@
 #include <stdio.h>
 
 int main() {
-    int n,f,flag=0;
-    printf("Enter size of array: ");
-    scanf("%d", &n);
+   int arr[]= {1,2,3,4,5,6,6,7,7,88}, t=7;
 
-    int arr[n];
-    printf("Enter elements of array: ");
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
+    int l=0, h=9, m;
+    while (l<=h){
+        m = (l+h)/2;
+        if (arr[m]== t)
+        {printf("Found at index %d", m);
+        break;}
+        
+        if (arr[m]<t)
+        {l = m+1;}
+        else 
+        {h = m-1;}
 
-    printf("Enter element to find: ");
-    scanf("%d", &f);
-
-    for(int i = 0; i < n; i++) {
-        if(arr[i] == f) {
-            printf("Element found at index %d\n", i);
-            flag = 1;
-            return 0;
-        }
-    }
-
-    if(flag == 0) {
-        printf("Element not found\n");
     }
 
 }
